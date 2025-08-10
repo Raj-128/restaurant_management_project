@@ -3,6 +3,11 @@ from .models import *
 
 # Create your views here.
  
- def home_view(request):
+def home_view(request):
     restaurant = Restaurant.objects.first()
     return render(request , 'home.html',{'restaurant':restaurant})
+
+def about_view(request):
+    return render(request,'about.html')    
+
+    
