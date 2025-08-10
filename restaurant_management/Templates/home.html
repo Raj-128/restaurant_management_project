@@ -6,5 +6,21 @@
 {% endblock%}
 
 {% block content%}
-<h1> Welcocme to {{ restaurant.name}}</h1>
+<h1 style="color: #2c3e50; font-family: Arial,sans-serif;text-align:center;margin-top:40px;">
+     Welcocme to {{ restaurant.name}}
+</h1>
+
+<p style="color:#555; font-size:18px; text-align: center; max-width:600px; margin:20px auto;">
+    Enjoy the finest dishes made with fresh ingredients, served in a cozy atmosphere.
+</p>
+
+<div style="text-align:center;
+margin-top:30px;">
+<a href="{% url 'about.html %}"
+style="display: inline-block;
+backgroung-color:#3498db;color:white;"
+padding: 10px 20px;border-radius: 5px; text-decoration: none;">
+Learn More About Us
+</a>
+</div>
 {% endblock %}
