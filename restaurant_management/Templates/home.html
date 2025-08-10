@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{{restaurant.name}}</title>
-    </head>
-    <body>
-        <h1> Welcome to {{restaurant.name}}</h1>
-    </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+{{ restaurant.name}}
+{{% endblock%}}
+
+{% block content%}
+<h1> Welocme to {{ restaurant.name}}</h1>
+{% endblock %}
