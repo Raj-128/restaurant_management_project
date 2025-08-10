@@ -1,11 +1,6 @@
-# Environment variables
-.env
+# Environment Variables
+.env 
 
-
-# python cache
+#Python Cache
 __pycache__/
-*.__pycache__
-
-
-# SQLite database
-db.sqlite3
+*.pyc
