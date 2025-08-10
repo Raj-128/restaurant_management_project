@@ -1,0 +1,11 @@
+# Environment variables
+.env
+
+
+# python cache
+__pycache__/
+*.__pycache__
+
+
+# SQLite database
+db.sqlite3
