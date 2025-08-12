@@ -40,7 +40,38 @@ p{
     font-size: 1.1em;
     line-height: 1.6;
 }
+/* Buttons */
+.button-group{
+    text-align: center;
+    margin-top: 35px;
+}
 
+.btn-green {
+    text-decoration: none;
+    background: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-blue {
+    text-decoration: none;
+    background-color: #2196F3;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-left: 15px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-green:hover,.btn-blue:hover {
+    opacity:0.85;
+}
 /* Footer */
 footer{
     background-color: #2c3e50;
