@@ -17,3 +17,12 @@ def contact_view(request):
         message = request.POST.get("message")
         print(f"Message from {name} ({email}):{message}")    
     return render(request,'contact.html')    
+
+def menu_list(request):
+    menu_items = [
+        {"name":" Margherita Pizza","price": 299,"description":"Classic Pizza with tomato and Mozzarella" },
+        {"name":"Veg Burger","price":199,"desciption":"Loaded with fresh veggies and cheese"},
+        {"name":"Pasta Alfredo","price":249,"description":"Creamy white sauce pasta"},
+       {"name":"Cold Coffee","price":99,"description":"Refreshing chilled coffee"},
+]
+    return render(request,'menu_list.html',{"menu_items":menu_items})
