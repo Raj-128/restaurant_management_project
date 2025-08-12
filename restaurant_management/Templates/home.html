@@ -7,20 +7,25 @@
 {% endblock%}
 
 {% block content%}
-<h1>
+    <h1>
      Welcocme to {{ restaurant.name}}
-</h1>
+    </h1>
+    {% if restaurant.phone_number %}
+        <p>Call us: {{restaurant.phone_number}}</p>
+    {% else %} 
+        <p> Phone Number not available</p>
+    {% endif%}       
 
-<p>
-    Enjoy the finest dishes made with fresh ingredients, served in a cozy atmosphere.
-</p>
+    <p>
+        Enjoy the finest dishes made with fresh ingredients, served in a cozy atmosphere.
+    </p>
 
-<div class="button-group">
-<a href="{% url 'about' %}" class="btn-green"> 
- Learn more About Us 
-</a>
-<a href="{% url 'contact' %}" class="btn-blue">
-Contact Us
-</a>
-</div>
+    <div class="button-group">
+    <a href="{% url 'about' %}" class="btn-green"> 
+        Learn more About Us 
+    </a>
+    <a href="{% url 'contact' %}" class="btn-blue">
+        Contact Us
+    </a>
+    </div>
 {% endblock %}
