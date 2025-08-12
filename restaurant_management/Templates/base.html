@@ -22,6 +22,9 @@
         {% block content %}{%endblock%} 
     </main>
     <footer>
+        {% if restaurant and restaurant.phone_number %}
+            <p>📲Call us: {{restaurant.phone_number}}</p>
+        {% endif %}    
         <p>&copy; {{current_year}} My Restaurant. All Rights Reserved.</p>
     </footer>
 </body>
