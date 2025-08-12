@@ -6,24 +6,34 @@
 {% endblock%}
 
 {% block content%}
-<h1 style="color: #2c3e50; font-family: Arial,sans-serif;text-align:center;margin-top:40px;">
+<h1 style="color: #2c3e50; font-family:'Segoe UI',Arial,sans-serif;text-align:center;margin-top:50px; letter-spacing:1px;">
      Welcocme to {{ restaurant.name}}
 </h1>
 
-<p style="color:#555; font-size:18px; text-align: center; max-width:600px; margin:20px auto;">
+<p style="color:#555; font-size:18px;line-height:1.6 text-align: center; max-width:600px; margin:20px auto;">
     Enjoy the finest dishes made with fresh ingredients, served in a cozy atmosphere.
 </p>
 
-<div style="text-align:center; margin-top:30px;">
+<div style="text-align:center; margin-top:35px;">
 <a href="{% url 'about' %}" 
-style="text-decoration:none; background:#4CAF50; color: white; padding:10px 20px;
-border-radius:5px; display:inline-block; transition: background 0.3s;">
+style="text-decoration:none; background:#4CAF50; color: white; padding:12px 25px;
+border-radius:5px; display:inline-block; transition: all 0.3s ease;font-weight:500;">
  Learn more About Us 
 </a>
 <a href="{% url 'contact' %}" 
-style="text-decoration:none; background-color:#2196F3; color:white; padding: 10px 20px;
-border-radius: 5px; margin-left: 10px; display: inline-block; transition:background 0.3s;">
+style="text-decoration:none; background-color:#2196F3; color:white; padding: 12px 25px;
+border-radius: 5px; margin-left: 15px; display: inline-block; transition:all 0.3s ease;font-weight:500;">
 Contact Us
 </a>
 </div>
+<script>
+    document.querySelectorAll('a').forEach(btn => {
+    btn.addEventListener('mouseover',()=>{
+    btn.style.opacity = '0.85';
+    });
+    btn.addEventListener('mouseout',() => {
+    btn.style.opacity = '1';
+    });
+    });
+</script>
 {% endblock %}
