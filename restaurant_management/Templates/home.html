@@ -14,13 +14,16 @@
     Enjoy the finest dishes made with fresh ingredients, served in a cozy atmosphere.
 </p>
 
-<div style="text-align:center;
-margin-top:30px;">
-<a href="{% url 'about.html %}"
-style="display: inline-block;
-backgroung-color:#3498db;color:white;"
-padding: 10px 20px;border-radius: 5px; text-decoration: none;">
-Learn More About Us
+<div style="text-align:center; margin-top:30px;">
+<a href="{% url 'about' %}" 
+style="text-decoration:none; background:#4CAF50; color: white; padding:10px 20px;
+border-radius:5px; display:inline-block; transition: background 0.3s;">
+ Learn more About Us 
+</a>
+<a href="{% url 'contact' %}" 
+style="text-decoration:none; background-color:#2196F3; color:white; padding: 10px 20px;
+border-radius: 5px; margin-left: 10px; display: inline-block; transition:background 0.3s;">
+Contact Us
 </a>
 </div>
 {% endblock %}
