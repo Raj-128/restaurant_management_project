@@ -1,4 +1,35 @@
 {% load static %}
 {% extends "base.html" %}
+{% block title %} Contact Us {% endblock %}
 
+{% block content %}
+<div class ="contact-container">
+    <h2> Contact us </h2>
+    <p> If you have any Questions, feel free to reach out to us using the details below:</p>
+
+    <div class="contact-info">
+        <p><strong>Address:</strong> 123,Main Street, Surat , Gujarat, India </p>
+        <p><strong>Phone:</strong> +91 9876543210</p>
+        <p><strong>Email:</strong> support@example.com</p>
+        <p><strong>Woeking Hours:</strong> MON - SAT, 9:00 AM - 6:00 PM</p>
+    </div>
+
+    <h3> Send us a Message</h3>
+    <form method="post">
+        {%csrf_token %}
+        <div>
+            <label for="name"> Name:</label>
+            <input type="text" id="name" name="Name" placeholder="Your Name" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+    </form>
+</div>        
 {% endblock %}
