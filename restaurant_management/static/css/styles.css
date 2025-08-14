@@ -20,6 +20,32 @@ header{
     text-align: center;
 
 }
+.search-form {
+    margin:20px auto;
+    text-align:center;
+}
+
+.search-form input {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor:pointer;
+    transition: backgroound-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #45a049;
+}
 
 /* main Content Styling */
 main{
