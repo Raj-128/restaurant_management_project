@@ -15,8 +15,8 @@ class Feedback(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = "Customer Feedback"
-        verbose_name_plural = "Customer Feedbacks"
+        verbose_name = " Feedback"
+        verbose_name_plural = " Feedbacks"
 
     def __str__(self):
         return f"feedback from {self.name} on {self.created_At.strftime('%Y-%m-%d')}"
