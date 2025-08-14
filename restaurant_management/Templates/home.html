@@ -34,4 +34,7 @@
         View Menu 
     </a>
     </div>
+    {% if error_message %}
+        <p style="color: red;">{{error_message}}</p>
+    {% endif %}
 {% endblock %}
