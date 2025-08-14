@@ -1,2 +1,13 @@
 {%load static %}
-<link rel="stylesheet" href="{% static 'styles.css' %}"
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"
+
+{% extedns "base.html" %}
+
+{% block title %} Reservations {% endblock %}
+
+{% block content %}
+    <main>
+        <h1> Reservations</h1>
+        <p> Online reservations are coming soon!! Please call us to book a table in the meantime.</p>
+    </main>
+{% endblock %}
