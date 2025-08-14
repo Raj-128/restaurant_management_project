@@ -46,7 +46,35 @@ header{
 .search-form button:hover {
     background-color: #45a049;
 }
+.feedback-form {
+    max-width:500px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
 
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.feedback-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.feedback-form button:hover {
+    background-color: #45a049;
+}
 /* main Content Styling */
 main{
 max-width: 800px;
