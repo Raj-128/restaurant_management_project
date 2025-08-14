@@ -33,6 +33,18 @@ def menu_list(request):
         {"name":" Margherita Pizza","price": 299,"description":"Classic Pizza with tomato and Mozzarella" },
         {"name":"Veg Burger","price":199,"desciption":"Loaded with fresh veggies and cheese"},
         {"name":"Pasta Alfredo","price":249,"description":"Creamy white sauce pasta"},
-       {"name":"Cold Coffee","price":99,"description":"Refreshing chilled coffee"},
+        {"name":"Cold Coffee","price":99,"description":"Refreshing chilled coffee"},
 ]
     return render(request,'menu_list.html',{"menu_items":menu_items})
+
+
+def feedback_view(request):
+    if request.method =="POST":
+        name = request.POST.get("name")
+        comments = request.POST.get("comments")
+
+        if name and comments:
+            Feedback.objects.create(name=name, comments=comments)
+            return redirect('feedback')
+
+    return render(request,'feedback.html')        
