@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"
+
+{% block title %} Feedback {% endblock %}
+{% block content %}
+<h2> leave Your Feedback</h2>
+
+<form method="post" class="feedback-form">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Your Name" required><br><br>
+    <textarea name="comments" rows="5" placeholder="Your commenets..."required></textarea>
+    <button type="submit">Submit Feedback</button>
+</form>
+{% endblock %}    
