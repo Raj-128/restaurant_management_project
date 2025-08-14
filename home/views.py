@@ -4,8 +4,18 @@ from .models import *
 # Create your views here.
  
 def home_view(request):
-    restaurant = Restaurant.objects.first()
-    return render(request , 'home.html',{'restaurant':restaurant})
+    restaurant = None
+    error_messsage = None
+
+    try:
+        restaurant = Restaurant.objects.first()
+        if not restaurant:
+            error_messsage = "No restaurant data found."
+    except DatabaseError as e:
+        error_messsage = f"Database error occured: {e}"
+    except Exception as e:
+        error_messsage = f"An unexpected error occured: {e}"
+    return render(request , 'home.html',{'restaurant':restaurant,'error_message':error_message})
 
 def about_view(request):
     return render(request,'about.html')    
