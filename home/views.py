@@ -39,26 +39,6 @@ def menu_list(request):
     return render(request,'menu_list.html',{"menu_items":menu_items})
 
 
-@api_view(['GET'])
-def get_menu(request):
-    menu = [
-        {
-            "name":"Margherita Pizza",
-            "description": "Classic cheese pizza with tomato sauce and mozzarella",
-            "price": 250
-        },
-        {
-            "name":"Paneer Butter Masala",
-            "description":"Cottage cheese cooked in rich buttery tomato gravy",
-            "price":300
-        },
-        {
-            "name":"Masala Dosa",
-            "description":"Crispy dosa stuffed with spicy potato filling",
-            "price":120
-        }
-    ]
-    return Response(menu)
 
 def feedback_view(request):
     if request.method =="POST":
