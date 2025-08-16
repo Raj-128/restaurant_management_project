@@ -1,9 +1,13 @@
 from django.shortcuts import render
-from .models import *
+from home.models import *
+from orders.models import *
+from products.models import *
+from products.models import *
 # Create your views here.
  
 def home_view(request):
     restaurant = None
+    menu_items = Menu.objects.all()
     error_messsage = None
 
     try:
@@ -14,7 +18,7 @@ def home_view(request):
         error_messsage = f"Database error occured: {e}"
     except Exception as e:
         error_messsage = f"An unexpected error occured: {e}"
-    return render(request , 'home.html',{'restaurant':restaurant,'error_message':error_message})
+    return render(request , 'home.html',{'restaurant':restaurant,'error_message':error_message,'menu_items':menu_items})
 
 def about_view(request):
     return render(request,'about.html')    
