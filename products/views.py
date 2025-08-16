@@ -24,3 +24,25 @@ class ItemView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @api_view(['GET'])
+    def get_menu(request):
+        menu = [
+            {
+                "name": "Margherita Pizza",
+                "description": "Classic Cheese pizza with tomato sauce and mozzarella",
+                "price": 250
+            },
+            {
+                "name":"Paneer Butter Masala",
+                "description":"Cottage cheese cooked in rich buttery tomato gravy",
+                "price":300
+            },
+            {
+                "name":"Masala Dosa",
+                "description":"Crispy dosa stuffed with spicy potato filling",
+                "price":120
+            }
+        ]
+        return Response(menu)
+        
