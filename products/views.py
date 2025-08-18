@@ -45,4 +45,8 @@ class ItemView(APIView):
             }
         ]
         return Response(menu)
+
+def menu(request):
+    items = MenuItem.objects.all()
+    return render(request,'menu_list.html',{'items':items})
         
