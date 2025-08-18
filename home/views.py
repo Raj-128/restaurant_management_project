@@ -9,6 +9,9 @@ def home_view(request):
     restaurant = None
     menu_items = Menu.objects.all()
     error_messsage = None
+    address = "123 main Street, Ahemdabad,Gujarat,India"
+    context = {"address":address}
+    
 
     try:
         restaurant = Restaurant.objects.first()
