@@ -40,4 +40,20 @@
     {% if error_message %}
         <p style="color: red;">{{error_message}}</p>
     {% endif %}
+    <section id="address" style="margin-top:50px; text-align:center;">
+        <h2>Our address</h2>
+        <p> {{address}}</p>
+
+        <div style="margin-top:20px;">
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.724652976537!2d72.57136271504865!3d23"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
 {% endblock %}
