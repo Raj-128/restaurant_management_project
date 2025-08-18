@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from home.models import *
 from orders.models import *
 from products.models import *
@@ -25,11 +25,14 @@ def about_view(request):
 
 def contact_view(request):
     if request.method == "POST":
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        message = request.POST.get("message")
-        print(f"Message from {name} ({email}):{message}")    
-    return render(request,'contact.html')    
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+            
+    else:
+        form = ContactForm()
+    return render(request,'home/contact.html',{'form':form})        print(f"Message from {name} ({email}):{message}")   
 
 def menu_list(request):
     menu_items = [
