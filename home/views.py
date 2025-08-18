@@ -32,7 +32,7 @@ def contact_view(request):
             
     else:
         form = ContactForm()
-    return render(request,'home/contact.html',{'form':form})        print(f"Message from {name} ({email}):{message}")   
+    return render(request,'contact.html',{'form':form})        print(f"Message from {name} ({email}):{message}")   
 
 def menu_list(request):
     menu_items = [
