@@ -43,8 +43,6 @@ def menu_list(request):
 ]
     return render(request,'menu_list.html',{"menu_items":menu_items})
 
-
-
 def feedback_view(request):
     if request.method =="POST":
         name = request.POST.get("name")
