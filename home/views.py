@@ -11,7 +11,6 @@ def home_view(request):
     error_messsage = None
     address = "123 main Street, Ahemdabad,Gujarat,India"
     context = {"address":address}
-    
 
     try:
         restaurant = Restaurant.objects.first()
