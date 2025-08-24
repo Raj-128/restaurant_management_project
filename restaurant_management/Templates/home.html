@@ -18,7 +18,17 @@
     {% else %} 
         <p> Phone Number not available</p>
     {% endif%}       
-
+    {% if location %}
+        <h3> Find Us At:</h3>
+        <p>
+            {{ location.address }}<br>
+            {{ location.city}},{{ location.state }} - {{location.zip_code}}
+        </p>
+    {% else %}
+        <p>
+            Restaurant address not available yet.</p>
+    {% endif %}
+    
     <p>
         Enjoy the finest dishes made with fresh ingredients, served in a cozy atmosphere.
     </p>
