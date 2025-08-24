@@ -31,7 +31,7 @@ def contact_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('contact')
             
     else:
         form = ContactForm()
