@@ -3,6 +3,7 @@ from home.models import *
 from orders.models import *
 from products.models import *
 from products.models import *
+from django.db import models
 # Create your views here.
  
 def home_view(request):
@@ -44,6 +45,17 @@ def menu_list(request):
         {"name":"Cold Coffee","price":99,"description":"Refreshing chilled coffee"},
 ]
     return render(request,'menu_list.html',{"menu_items":menu_items})
+class RestaurantLocation(models.Model):
+    address = models.CharField(max_length=255)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    zip_code = models.charField(max_length=20)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.address}, {self.city},{self.state} - {self.zip_code}"
 
 def feedback_view(request):
     if request.method =="POST":
