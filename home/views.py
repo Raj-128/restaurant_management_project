@@ -12,7 +12,7 @@ def home_view(request):
     error_messsage = None
     address = "123 main Street, Ahemdabad,Gujarat,India"
     context = {"address":address}
-
+    location = RestaurantLocation.objects.first()
     try:
         restaurant = Restaurant.objects.first()
         if not restaurant:
@@ -21,7 +21,7 @@ def home_view(request):
         error_messsage = f"Database error occured: {e}"
     except Exception as e:
         error_messsage = f"An unexpected error occured: {e}"
-    return render(request , 'home.html',{'restaurant':restaurant,'error_message':error_message,'menu_items':menu_items})
+    return render(request , 'home.html',{'restaurant':restaurant,'error_message':error_message,'menu_items':menu_items,'location':location})
 
 def about_view(request):
     return render(request,'about.html')    
