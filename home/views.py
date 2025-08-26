@@ -7,6 +7,11 @@ from django.db import models
 # Create your views here.
  
 def home_view(request):
+    query = request.GET.get("q")
+    if query:
+        menu_items = MenuItem.objects.filter(name__icontains=query)
+    else:
+        menu_items = MenuItem.objects.all()
     restaurant = None
     menu_items = Menu.objects.all()
     error_messsage = None
@@ -21,7 +26,7 @@ def home_view(request):
         error_messsage = f"Database error occured: {e}"
     except Exception as e:
         error_messsage = f"An unexpected error occured: {e}"
-    return render(request , 'home.html',{'restaurant':restaurant,'error_message':error_message,'menu_items':menu_items,'location':location})
+    return render(request , 'home.html',{'restaurant':restaurant,'error_message':error_message,'menu_items':menu_items,'location':location,"query":query})
 
 def about_view(request):
     return render(request,'about.html')    
