@@ -55,6 +55,7 @@
         <p> {{address}}</p>
 
         <div style="margin-top:20px;">
+            Car
             <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.724652976537!2d72.57136271504865!3d23"
             width="600"
@@ -66,4 +67,96 @@
             </iframe>
         </div>
     </section>
+{% endblock %}
+
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% extends "base.html" %}
+
+{% block title %}
+{{ restaurant.name }}
+{% endblock %}
+
+{% block content %}
+
+<!-- top header section -->
+<div style="display:flex;justify-content:space-between; align-items:center; padding:10px 20px;">
+    <!-- Logo -->
+    <div>
+        <img src="{% static 'images/logo.png' %}" alt="{{ restaurant.name}} Logo " class="logo" style="max-width: 120px;">
+    </div>
+
+    <!-- Cart Count -->
+    <div style="font-size:18px; font-weight:bold;">
+        🛒 Cart (<span style="color:green;">{{ cart_count }}</span> items)
+    </div>
+</div>
+
+<hr>
+
+<!-- welcome text -->
+<h1 style="text-align:center; margin-top:20px;">
+    Welcome to {{ restaurant.name}}
+</h1>
+
+{% if restaurant.phone_number %}
+    <p style="text-align:center;"> Call Us: {{restaurant.phone_number}}</p>
+{% else %}
+    <p style="text-align:center;"> Phone Number not available </p>
+{% endif %}
+
+<!-- Address -->
+{% if location %}
+    <h3 style="text-align:center;">Find Us At:</h3>
+    <p style="text-align:center;">
+        {{ location.address }}<br>
+        {{ location.city }},{{location.state }} - {{location.zip_code }}
+    </p>
+{% else %}
+    <p style="text-align:center;"> Restaurant Address Not Available yet.</p>
+{% endif %}
+
+<!-- Info -->
+<p style="text-align:center; margin-top:20px;">
+    Enjoy the Finest dishes made with fresh ingredients, served in a cozy atmosphere.
+</p>
+
+<!-- Search Bar -->
+<div style="text-align:center; margin:20px 0;">
+    <form method="get" action="" class="search-form" style="display:inline-block;">
+        <input type="text" name="q" placeholder="Search menu items..." style="padding:8px;"/>
+        <button type="submit" style="padding:8px 12px;">Search </button>
+    </form>
+</div>
+
+<!-- Buttons -->
+<div class="button-group" style="text-align:center; margin:20px 0;">
+    <a href="{% url 'about' %}" class="btn-green">Learn more About Us</a>
+    <a href="{% url 'contact' %}" class="btn-blue">Contact Us</a>
+    <a href="{% url 'menu_list %}" class="btn-yellow">View Menu </a>
+</div>
+
+{% if error_message %}
+<p style="color: red; text-align:center;">{{error_message}}</p>
+{% endif %}
+
+<!-- Address + Google Maps -->
+<section id="address" style="margin-top:50px; text-align:center;">
+    <h2> Our Address</h2>
+    <p> {{address}}</p>
+
+    <div style="margin-top:20px;">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.724652976537!2d72.57136271504865!3d23"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
 {% endblock %}
