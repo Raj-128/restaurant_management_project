@@ -29,7 +29,8 @@ def home_view(request):
     return render(request , 'home.html',{'restaurant':restaurant,'error_message':error_message,'menu_items':menu_items,'location':location,"query":query})
 
 def about_view(request):
-    return render(request,'about.html')    
+    restaurant = Restaurant.objects.first()
+    return render(request,'about.html',{'restaurant':restaurant})    
 
 def contact_view(request):
     if request.method == "POST":
