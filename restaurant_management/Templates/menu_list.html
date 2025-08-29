@@ -16,7 +16,7 @@ Menu
             <span class="menu-price">Rs.{{ item.price }}</span>
             <span class="menu-description">{{item.description}}</span>
 
-            {% if item.image %}
+            {%if item.image%}
                 <img src="{{ item.image.url }}" alt="{{ item.name }}" width="150">
             {% else %}
                 <em> No image aavailable</em>
