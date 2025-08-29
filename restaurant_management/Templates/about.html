@@ -5,7 +5,30 @@
 {% block title %}About Us {% endblock%}
 
 {% block content %}
-<h1> About Our Restaurant </h1>
-<p>  Welcome to our Restaurant! We serve fresh, delicious meals made with locally sources ingreidients. our mission is to provide a warm , friendly atmosphere fro our guests.</p>
+<div style="text-align:center; margin:40px;">
+    <h1> About {{restaurant.name}} </h1>
+    <p style="font-size:18px; margin-top:20px;"> 
+        Welcome to {{restaurant.name}}! <br>
+        we've been serving delicious food made with love and fresh ingredient since 1990.
+        Our mission is to provide a very a cozy atmosphere where families and friends can come together 
+        and enjoy authentic meals that remind you of home.
+    </p>
+    <h2 style="margin-top:30px;">Our Mission </h2>
+    <p>
+        To bring people closer through food and create nforgettable dining experiences.
+        We believe in quality, tradition, and warm hospitality.
+    </p>
+
+    <h2 style="margin-top:30px;">Our Story </h2>
+    <p>
+        Started as a small family restaurant, we've grown into a place loved by locals and visitors alike.
+        From  classic recipes passed down through generations to new flavours,we keep evolving while 
+        staying true to our roots.
+    </p>
+
+    <div style="margin-top:30px;">
+        <a href="{% url 'home' %}" class="btn-green"> Back to home</a>
+    </div>
+</div>    
 <img src="{% static 'images/restaurant.jpg'%}" alt = "Our Restaurant" style="max-width: 500px;">
 {% endblock %}
